@@ -1,0 +1,128 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  color: #333;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: color 0.3s ease-in-out;
+}
+
+.pagination button.active {
+  color: #874f4f;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.pagination button:hover {
+  color: #fff;
+  background-color: #333;
+}
+.select1 {
+  min-width: 80px;
+  height: 30px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #31749b;
+  box-shadow: 0 5px #15324f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  margin-top: -130px;
+  margin-left: -430px;
+}
+@media only screen and (min-width: 1500px) {
+  .select1 {
+    margin-top: -166px;
+    margin-left: 100px;
+  }
+}
+
+.select1:hover {
+  background-color: #72d1e6;
+  color: #000000;
+  transform: translateY(-5px);
+}
+.select2 {
+  min-width: 80px;
+  height: 30px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #31749b;
+  box-shadow: 0 5px #15324f;;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  margin-top: -130px;
+  margin-left: -600px;
+}
+@media only screen and (min-width: 1500px) {
+  .select2 {
+    margin-top: -166px;
+    margin-left: -60px;
+  }
+}
+
+.select2:hover {
+  background-color: #72d1e6;
+  color: #000000;
+  transform: translateY(-5px);
+}
+.select3 {
+  min-width: 80px;
+  height: 30px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #31749b;
+  box-shadow: 0 5px #15324f;;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  margin-top: -130px;
+  margin-left: -280px;
+}
+@media only screen and (min-width: 1500px) {
+  .select2 {
+    margin-top: -166px;
+    margin-left: -60px;
+  }
+}
+
+.select3:hover {
+  background-color: #72d1e6;
+  color: #000000;
+  transform: translateY(-5px);
+}
+
+.search{
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 500px;
+  }
