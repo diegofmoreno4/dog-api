@@ -20,6 +20,7 @@ const getSavedPage = () => {
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
+  const [selectedTemperament, setSelectedTemperament] = useState("");
 
   const allDogsFromApi = useSelector((state) => state.allDogs);
   const dispatch = useDispatch();
@@ -84,12 +85,13 @@ const Home = () => {
 
   const handleFilter = (event) => {
     const selectedValue = event.target.value;
-
+  
     if (selectedValue === "All") {
       dispatch(getDogs());
     } else {
       dispatch(filterTemperament(selectedValue));
     }
+    setSelectedTemperament(selectedValue);
   };
 
   const filteredDogs = combinedDogs.filter((dog) => {
@@ -267,7 +269,7 @@ const Home = () => {
           </button>
         ))}
       </div>
-      <Cards combinedDogs={currentCards} />
+      <Cards combinedDogs={currentCards} selectedTemperament={selectedTemperament}/>
     </div>
   );
 };

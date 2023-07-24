@@ -1,0 +1,66 @@
+/* Estilos para el contenedor principal */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+  background-image: url("https://media.istockphoto.com/id/1395444435/vector/pet-footprint-background-frame.jpg?s=612x612&w=0&k=20&c=y5U17YLbxEx5YAzvnYBoyBUb46v5at4rCJjuIS4kS8U=");
+  background-size: 910px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 30px;
+  border-radius:25%;
+}
+
+/* Estilos para el contenedor de la imagen */
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 70px;
+  border-radius: 10px
+}
+
+/* Estilos para la imagen del perro */
+.img {
+  max-width: 350px;
+  max-height: 320px;
+}
+
+/* Estilos para el contenedor de los datos */
+.dataContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: -90px;
+}
+
+/* Estilos para los títulos */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  width: 380px;
+  word-break: break-all;
+}
+
+/* Estilos para la información del perro */
+.info {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Estilos para el listado de temperamentos */
+.temperaments {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 20px;
+  width: 380px;
+  word-break: break-all;
+}

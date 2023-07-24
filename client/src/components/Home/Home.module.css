@@ -1,9 +1,13 @@
+/* Estilos para el paginador */
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 5rem;
+  margin-bottom: -4rem;
+  
 }
 
+/* Estilos para los botones del paginador */
 .pagination button {
   color: #333;
   font-weight: bold;
@@ -12,14 +16,18 @@
   border: none;
   background-color: transparent;
   transition: color 0.3s ease-in-out;
+  margin: 0 0.2rem; 
+  background-color: #a3a8b8
 }
 
+/* Estilos para el botón activo del paginador */
 .pagination button.active {
-  color: #874f4f;
-  background-color: #333;
+  color: #fff;
+  background-color: #007bff;
   border-radius: 50%;
 }
 
+/* Estilos para el hover del botón */
 .pagination button:hover {
   color: #fff;
   background-color: #333;
@@ -36,13 +44,13 @@
   outline: none;
   border-radius: 5px;
   border: none;
-  background: #31749b;
-  box-shadow: 0 5px #15324f;
+  box-shadow: 0 5px #412806;
   cursor: pointer;
   transition: all 0.3s ease;
   position: absolute;
   margin-top: -130px;
   margin-left: -430px;
+  background-color: #aa7e95
 }
 @media only screen and (min-width: 1500px) {
   .select1 {
@@ -52,7 +60,7 @@
 }
 
 .select1:hover {
-  background-color: #72d1e6;
+  background-color: #dfae69;
   color: #000000;
   transform: translateY(-5px);
 }
@@ -68,13 +76,13 @@
   outline: none;
   border-radius: 5px;
   border: none;
-  background: #31749b;
-  box-shadow: 0 5px #15324f;;
+  box-shadow: 0 5px #412806;
   cursor: pointer;
   transition: all 0.3s ease;
   position: absolute;
   margin-top: -130px;
   margin-left: -600px;
+  background-color: #aa7e95
 }
 @media only screen and (min-width: 1500px) {
   .select2 {
@@ -84,7 +92,7 @@
 }
 
 .select2:hover {
-  background-color: #72d1e6;
+  background-color: #dfae69;
   color: #000000;
   transform: translateY(-5px);
 }
@@ -100,29 +108,63 @@
   outline: none;
   border-radius: 5px;
   border: none;
-  background: #31749b;
-  box-shadow: 0 5px #15324f;;
+  box-shadow: 0 5px #412806;
   cursor: pointer;
   transition: all 0.3s ease;
   position: absolute;
   margin-top: -130px;
   margin-left: -280px;
+  background-color: #aa7e95
 }
 @media only screen and (min-width: 1500px) {
   .select2 {
     margin-top: -166px;
     margin-left: -60px;
+    
   }
 }
 
 .select3:hover {
-  background-color: #72d1e6;
+  background-color: #dfae69;
   color: #000000;
   transform: translateY(-5px);
+  
 }
 
 .search{
   position: absolute;
   margin-top: 25px;
   margin-left: 500px;
+  }
+  .select4 {
+    min-width: 80px;
+    height: 30px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 5px #412806;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    margin-top: -130px;
+    margin-left: -150px;
+    background-color: #aa7e95
+  }
+  @media only screen and (min-width: 1500px) {
+    .select4 {
+      margin-top: -166px;
+      margin-left: -60px;
+    }
+  }
+  
+  .select4:hover {
+    background-color: #dfae69;
+    color: #000000;
+    transform: translateY(-5px);
   }

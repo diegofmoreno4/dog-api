@@ -4,8 +4,8 @@ import styles from "./Nav.module.css";
 const Nav = () => {
   return (
     <div className={styles.navbar}>
-      <Link to="/about">
-        <button className={styles.button1}>About</button>
+      <Link to="/form">
+        <button className={styles.button1}>Crear Perro</button>
       </Link>
       <Link to="/home">
         <button className={styles.button2}>Home</button>

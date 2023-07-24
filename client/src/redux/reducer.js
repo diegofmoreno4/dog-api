@@ -8,7 +8,6 @@ import {
 } from "./actions";
 
 const initialState = {
-  myFavorites: [],
   allDogs: [],
   originalDogs: [],
   dogDetail: [],
@@ -63,8 +62,8 @@ const rootReducer = (state = initialState, action) => {
       };
     case ORDER_WEIGHT:
       const sortedDogsPeso = [...state.allDogs].sort((a, b) => {
-        const weightA = parseInt(a.weight.imperial.split(" - ")[0]);
-        const weightB = parseInt(b.weight.imperial.split(" - ")[0]);
+        const weightA = parseInt(a.weight?.imperial?.split(" - ")[0]) || 0;
+        const weightB = parseInt(b.weight?.imperial?.split(" - ")[0]) || 0;
 
         if (weightA < weightB) {
           return action.payload === "A" ? -1 : 1;
@@ -78,7 +77,6 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         allDogs: sortedDogsPeso,
       };
-
     default:
       return { ...state };
   }

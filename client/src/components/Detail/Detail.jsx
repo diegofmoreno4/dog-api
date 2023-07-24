@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { cleanDetail, getDogsDetail } from "../redux/actions";
+import { cleanDetail, getDogsDetail } from "../../redux/actions";
 import React, { useEffect } from "react";
+import styles from "./Detail.module.css";
 
 const Detail = () => {
   const dispatch = useDispatch();
@@ -35,9 +36,7 @@ const Detail = () => {
 
   // Función para obtener la URL de la imagen del perro
   const getImageUrl = () => {
-    if (image && image.url) {
-      return image.url;
-    } else if (imagen) {
+     if (imagen) {
       return imagen;
     } else if (reference_image_id) {
       return `https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`;
@@ -55,21 +54,25 @@ const getTemperamentsText = () => {
   return "Sin información de temperamentos";
 };
 
-  return (
-    <div>
-      {id && <h1>ID: {id}</h1>}
-      {getImageUrl() && <img src={getImageUrl()} alt="" />}
-      {nombre && <h1>Nombre: {nombre}</h1>}
-      {name && <h1>Nombre: {name}</h1>}
-      {altura && <h2>Altura: {altura}</h2>}
-      {height && <h2>Altura: {height.imperial}</h2>}
-      {peso && <h2>Peso: {peso} Kg</h2>}
-      {weight && <h2>Peso: {weight.imperial} Kg</h2>}
-      {años_vida && <h2>Años de vida: {años_vida}</h2>}
-      {life_span && <h2>Años de vida: {life_span}</h2>}
-      <h2>Temperamentos: {getTemperamentsText()}</h2>
+return (
+  <div className={styles.container}>
+    <div className={styles.imageContainer}>
+      {getImageUrl() && <img className={styles.img} src={getImageUrl()} alt="" />}
     </div>
-  );
+    <div className={styles.dataContainer}>
+      {id && <h1 className={styles.title}>ID: {id}</h1>}
+      {nombre && <h1 className={styles.title}>Nombre: {nombre}</h1>}
+      {name && <h1 className={styles.title}>Nombre: {name}</h1>}
+      {altura && <h2 className={styles.info}>Altura: {altura}</h2>}
+      {height && <h2 className={styles.info}>Altura: {height.imperial}</h2>}
+      {peso && <h2 className={styles.info}>Peso: {peso} Kg</h2>}
+      {weight && <h2 className={styles.info}>Peso: {weight.imperial} Kg</h2>}
+      {años_vida && <h2 className={styles.info}>Años de vida: {años_vida}</h2>}
+      {life_span && <h2 className={styles.info}>Años de vida: {life_span}</h2>}
+      <h2 className={styles.temperaments}>Temperamentos: {getTemperamentsText()}</h2>
+    </div>
+  </div>
+);
 };
 
 export default Detail;

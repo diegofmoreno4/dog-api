@@ -1,13 +1,15 @@
 import React from "react";
-import Card from "../Card/Card"
-import styles from "./Cards.module.css"
+import Card from "../Card/Card";
+import styles from "./Cards.module.css";
 
-
-const Cards = (props) => {
-  const { combinedDogs } = props;
+const Cards = ({ combinedDogs, selectedTemperament }) => {
+  const filteredCards = combinedDogs.filter(
+    (dog) => dog.temperament && dog.temperament.includes(selectedTemperament)
+  );
+    
   return (
     <div className={styles.cardItem}>
-      {combinedDogs.map((dog) => {
+      {filteredCards.map((dog) => {
         return (
           <Card
             key={dog.id}
