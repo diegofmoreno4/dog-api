@@ -5,10 +5,18 @@
   background-color: #0b1324;
   color: #fff;
   height: 0px;
-  padding: 0 40px;
+  padding: 0 0px;
   opacity: 0.92;
   margin-top: -10px;
+
 }
+
+@media only screen and (min-width: 1200px) {
+  .navbar {
+    margin-left: 290px;
+  }
+}
+
 .navbar input {
   width: 200px;
   padding: 6px;

@@ -1,12 +1,18 @@
 const axios = require("axios");
 const { Temperaments } = require("../db");
 
-const API_URL = "https://api.thedogapi.com/v1/breeds/";
+const URL = "https://api.thedogapi.com/v1/breeds/";
 
 const getAndSaveTemperaments = async () => {
   try {
+    // Verificar si ya existen registros de temperamentos en la base de datos
+    const existingTemperaments = await Temperaments.findAll();
+    if (existingTemperaments.length > 0) {
+      return existingTemperaments;
+    }
+
     // Obtener los temperamentos de la API
-    const response = await axios.get(API_URL);
+    const response = await axios.get(URL);
     const temperamentsFromAPI = response.data;
 
     // Crear un conjunto para almacenar los nombres de los temperamentos sin duplicados
@@ -37,10 +43,3 @@ const getAndSaveTemperaments = async () => {
 };
 
 module.exports = getAndSaveTemperaments;
-
-
-
-
-
-
-

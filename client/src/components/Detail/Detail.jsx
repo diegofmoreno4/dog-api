@@ -67,7 +67,7 @@ return (
       {height && <h2 className={styles.info}>Altura: {height.imperial}</h2>}
       {peso && <h2 className={styles.info}>Peso: {peso} Kg</h2>}
       {weight && <h2 className={styles.info}>Peso: {weight.imperial} Kg</h2>}
-      {años_vida && <h2 className={styles.info}>Años de vida: {años_vida}</h2>}
+      {años_vida && <h2 className={styles.info}>Años de vida: {años_vida} years</h2>}
       {life_span && <h2 className={styles.info}>Años de vida: {life_span}</h2>}
       <h2 className={styles.temperaments}>Temperamentos: {getTemperamentsText()}</h2>
     </div>

@@ -5,12 +5,15 @@ import {
   FILTER_TEMPERAMENT,
   ORDER_NAME,
   ORDER_WEIGHT,
+  FILTER_ORIGIN,
+  GET_TEMPERAMENTS,
 } from "./actions";
 
 const initialState = {
   allDogs: [],
   originalDogs: [],
   dogDetail: [],
+  temperaments: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -18,8 +21,8 @@ const rootReducer = (state = initialState, action) => {
     case GET_DOGS:
       return {
         ...state,
-        allDogs: action.payload,
         originalDogs: action.payload,
+        allDogs: action.payload,
       };
     case GET_DOGS_DETAIL:
       return {
@@ -31,19 +34,20 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         dogDetail: {},
       };
-    case FILTER_TEMPERAMENT:
-      const selectedTemperament = action.payload;
+    case GET_TEMPERAMENTS:
       return {
         ...state,
-        allDogs: state.originalDogs.filter((dog) => {
-          if (selectedTemperament === "All") {
-            return true;
-          } else {
-            return (
-              dog.temperament && dog.temperament.includes(selectedTemperament)
-            );
-          }
-        }),
+        temperaments: action.payload,
+      };
+    case FILTER_TEMPERAMENT:
+      const allDogs = state.originalDogs;
+      const filterDog =
+        action.payload === "all"
+          ? allDogs
+          : allDogs.filter((dog) => dog.temperament?.includes(action.payload));
+      return {
+        ...state,
+        allDogs: filterDog,
       };
     case ORDER_NAME:
       const sortedDogs = [...state.allDogs].sort((a, b) => {
@@ -76,6 +80,21 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         allDogs: sortedDogsPeso,
+      };
+    case FILTER_ORIGIN:
+      let filterCreation = null;
+      if (action.payload === "all") {
+        filterCreation = state.originalDogs;
+      } else if (action.payload === "Database") {
+        filterCreation = state.originalDogs.filter((dog) => dog.CreadoDatabase);
+      } else if (action.payload === "api") {
+        filterCreation = state.originalDogs.filter(
+          (dog) => !dog.CreadoDatabase
+        );
+      }
+      return {
+        ...state,
+        allDogs: filterCreation,
       };
     default:
       return { ...state };

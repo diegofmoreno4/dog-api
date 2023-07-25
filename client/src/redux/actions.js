@@ -8,6 +8,8 @@ export const CLEAN_DETAIL = "CLEAN_DETAIL";
 export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const ORDER_NAME = "ORDER_NAME";
 export const ORDER_WEIGHT = "ORDER_WEIGHT";
+export const FILTER_ORIGIN = "FILTER_ORIGIN";
+export const GET_TEMPERAMENTS = "GET_TEMPERAMENTS";
 
 //Necesita hacer la petición al servidor
 export const getDogs = () => {
@@ -19,8 +21,10 @@ export const getDogs = () => {
         type: GET_DOGS,
         payload: data,
       });
+
+      
     } catch (error) {
-      console.log(error);
+      throw new Error(error);
     }
   };
 };
@@ -35,7 +39,7 @@ export const getDogsDetail = (id) => {
         payload: data,
       });
     } catch (error) {
-      console.log(error);
+      throw new Error(error);
     }
   };
 };
@@ -46,10 +50,10 @@ export const cleanDetail = () => {
   };
 };
 
-export const filterTemperament = (temperament) => {
+export const filterTemperament = (temperaments) => {
   return {
     type: FILTER_TEMPERAMENT,
-    payload: temperament,
+    payload:temperaments
   };
 };
 
@@ -61,8 +65,30 @@ export const orderName = (name) => {
 };
 
 export const orderWeight = (weight) => {
-    return {
-      type: ORDER_WEIGHT,
-      payload: weight,
-    };
+  return {
+    type: ORDER_WEIGHT,
+    payload: weight,
   };
+};
+
+export const filterOrigin = (payload) => {
+  return {
+    type: FILTER_ORIGIN,
+    payload,
+  };
+};
+
+export function getTemperaments() {
+  const endpoint = "http://localhost:3001/temperaments";
+  return async (dispatch) => {
+    try {
+      const { data } = await axios(endpoint);
+      return dispatch({
+        type: GET_TEMPERAMENTS,
+        payload: data,
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+}

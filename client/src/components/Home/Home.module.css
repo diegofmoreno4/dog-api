@@ -4,9 +4,16 @@
   justify-content: center;
   margin-top: 5rem;
   margin-bottom: -4rem;
-  
 }
 
+.pageButton.active {
+  color: #f25353 !important;
+  background-color: #d82b2b !important;
+}
+.currentPage {
+  background-color: #333;
+  color: #fff;
+}
 /* Estilos para los botones del paginador */
 .pagination button {
   color: #333;
@@ -16,15 +23,8 @@
   border: none;
   background-color: transparent;
   transition: color 0.3s ease-in-out;
-  margin: 0 0.2rem; 
-  background-color: #a3a8b8
-}
-
-/* Estilos para el botón activo del paginador */
-.pagination button.active {
-  color: #fff;
-  background-color: #007bff;
-  border-radius: 50%;
+  margin: 0 0.2rem;
+  background-color: #a3a8b8;
 }
 
 /* Estilos para el hover del botón */
@@ -32,6 +32,33 @@
   color: #fff;
   background-color: #333;
 }
+
+.navigationButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 60px;
+}
+
+.navigationButtons :hover {
+  background-color: #606060;
+}
+
+.navigationButton {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.navigationButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .select1 {
   min-width: 80px;
   height: 30px;
@@ -50,12 +77,12 @@
   position: absolute;
   margin-top: -130px;
   margin-left: -430px;
-  background-color: #aa7e95
+  background-color: #aa7e95;
 }
 @media only screen and (min-width: 1500px) {
   .select1 {
-    margin-top: -166px;
-    margin-left: 100px;
+    margin-top: -130px;
+    margin-left: -350px;
   }
 }
 
@@ -82,12 +109,12 @@
   position: absolute;
   margin-top: -130px;
   margin-left: -600px;
-  background-color: #aa7e95
+  background-color: #aa7e95;
 }
 @media only screen and (min-width: 1500px) {
   .select2 {
-    margin-top: -166px;
-    margin-left: -60px;
+    margin-top: -130px;
+    margin-left: -860px;
   }
 }
 
@@ -114,13 +141,12 @@
   position: absolute;
   margin-top: -130px;
   margin-left: -280px;
-  background-color: #aa7e95
+  background-color: #aa7e95;
 }
 @media only screen and (min-width: 1500px) {
-  .select2 {
-    margin-top: -166px;
-    margin-left: -60px;
-    
+  .select3 {
+    margin-top: -130px;
+    margin-left: -660px;
   }
 }
 
@@ -128,43 +154,42 @@
   background-color: #dfae69;
   color: #000000;
   transform: translateY(-5px);
-  
 }
 
-.search{
+.search {
   position: absolute;
   margin-top: 25px;
   margin-left: 500px;
-  }
+}
+.select4 {
+  min-width: 80px;
+  height: 30px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 5px #412806;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  margin-top: -130px;
+  margin-left: -150px;
+  background-color: #aa7e95;
+}
+@media only screen and (min-width: 1500px) {
   .select4 {
-    min-width: 80px;
-    height: 30px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 5px #412806;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: absolute;
     margin-top: -130px;
-    margin-left: -150px;
-    background-color: #aa7e95
+    margin-left: -530px;
   }
-  @media only screen and (min-width: 1500px) {
-    .select4 {
-      margin-top: -166px;
-      margin-left: -60px;
-    }
-  }
-  
-  .select4:hover {
-    background-color: #dfae69;
-    color: #000000;
-    transform: translateY(-5px);
-  }
+}
+
+.select4:hover {
+  background-color: #dfae69;
+  color: #000000;
+  transform: translateY(-5px);
+}

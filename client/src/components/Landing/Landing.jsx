@@ -12,7 +12,7 @@ const Landing = () => {
   return (
     <div className={styles.landingContainer}>
       <h1>Bienvenidos a mi Proyecto Individual de Dogs</h1>
-      <p>En este proyecto, hemos utilizado las siguientes herramientas:</p>
+      <p>En este proyecto, he utilizado las siguientes herramientas:</p>
       <ul className={styles.toolsList}>
         <li>
           <img src={reactLogo} alt="React" />

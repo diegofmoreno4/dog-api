@@ -40,6 +40,7 @@ const getDogs = async () => {
             life_span: dbDog.años_vida,
             image: dbDog.imagen,
             temperament: temperamentNames.join(", "),
+            CreadoDatabase:dbDog.CreadoDatabase
           });
         }
       });

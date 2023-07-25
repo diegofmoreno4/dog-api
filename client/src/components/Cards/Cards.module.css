@@ -5,12 +5,11 @@
     margin: 13%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: 80px;
-    margin-bottom: 90px;
-    
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1200px) {
     .cardItem {
-      margin-top: 120px;
+      margin-top: 19px;
     }
   }
