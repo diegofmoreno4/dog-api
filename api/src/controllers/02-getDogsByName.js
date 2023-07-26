@@ -1,13 +1,15 @@
 const axios = require("axios");
 const { Sequelize } = require("sequelize");
+require("dotenv").config();
+const { API_KEY } = process.env;
 
 const { Dog } = require("../db");
 
-const apiUrl = "https://api.thedogapi.com/v1/breeds/search";
+const Url = "https://api.thedogapi.com/v1/breeds/search";
 
 const getDogsByName = async (name) => {
   try {
-    const response = await axios.get(`${apiUrl}?q=${name}`);
+    const response = await axios.get(`${Url}?q=${name}`);
     const apiDogs = response.data;
 
     if (apiDogs.length > 0) {

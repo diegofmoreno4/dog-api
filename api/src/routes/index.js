@@ -59,7 +59,7 @@ router.post("/dogs", async (req, res) => {
       peso,
       años_vida,
       temperaments,
-      imagen
+      imagen,
     );
     res.status(201).json(newDog);
   } catch (error) {

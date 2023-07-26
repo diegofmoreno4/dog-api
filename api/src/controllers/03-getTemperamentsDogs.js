@@ -1,7 +1,9 @@
 const axios = require("axios");
 const { Temperaments } = require("../db");
+require("dotenv").config();
+const { API_KEY } = process.env;
 
-const URL = "https://api.thedogapi.com/v1/breeds/";
+const URL = `https://api.thedogapi.com/v1/breeds/?api_key=${API_KEY}`;
 
 const getAndSaveTemperaments = async () => {
   try {

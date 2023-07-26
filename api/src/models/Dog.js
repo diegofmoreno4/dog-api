@@ -8,7 +8,6 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       autoIncrement:true,
       primaryKey: true,
-      value: 265,
     },
     imagen: {
       type: DataTypes.STRING,
@@ -30,6 +29,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    
     CreadoDatabase: { 
       type: DataTypes.BOOLEAN,
       allowNull: false,
